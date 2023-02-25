@@ -4,9 +4,9 @@ import '../../config/database.js'
 
 let users = [
     {   
-        name: "julian",
-        mail: "alejandro@mh.com.ar",
-        password: "dada",
+        name: "lucas",
+        mail: "anacleto@mh.com.ar",
+        password: "1234",
     }
 ]
 
