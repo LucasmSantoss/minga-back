@@ -4,6 +4,7 @@ import './config/database.js'
 import path from 'path' //metodos para trabajar con rutas de archivos y directorios
 import logger from 'morgan' //middleware que registra peticiones y errores HTTP
 import indexRouter from './routes/index.js' //rutas de index
+import cors from 'cors'
 
 import { __dirname } from './utils.js' //direccion de la carpeta raíz del proyecto
 
@@ -18,6 +19,7 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(cors())
 
 //routes
 app.use('/', indexRouter)
