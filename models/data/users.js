@@ -7,6 +7,7 @@ let users = [
         name: "lucas",
         mail: "anacleto@mh.com.ar",
         password: "1234",
+        confirm_password: "1234",
     }
 ]
 
