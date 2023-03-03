@@ -1,10 +1,11 @@
 import express from 'express'
 import User from '../models/User.js'
-var router = express.Router();
+
+let router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('aca tendrian que estar los usuarios');
+  res.send('users here');
 });
 
 router.post('/', async (req,res) => {
