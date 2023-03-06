@@ -13,4 +13,5 @@ router.get("/", function (req, res, next) {
 });
 router.post("/", validator(mangaCreate), exist_title, create)
 
+
 export default router;

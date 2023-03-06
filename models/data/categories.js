@@ -1,5 +1,6 @@
 import "dotenv/config.js";
 import "../../config/database.js";
+import Category from "../Category.js";
 const uri = process.env.MONGO;
 const categories = [
     {
@@ -22,19 +23,19 @@ const categories = [
     {
         name: "dc",
         detail: "American superhero comics",
-        admin_id: "",
+        admin_id: "63f66f8daea87ce097984ac9",
     },
     {
         name: "shojo",
         detail:
             "It is aimed especially at the adolescent female audience, being mostly starring a girl.",
-        admin_id: "",
+        admin_id: "63f66f8daea87ce097984ac9",
     },
     {
         name: "seinen",
         detail: "Japanese seinen tells stories with a mature tone.",
-        admin_id: "",
+        admin_id: "63f66f8daea87ce097984ac9",
     },
 ];
 
-categories.insertMany(categories);
+Category.insertMany(categories);
