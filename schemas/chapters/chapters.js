@@ -7,7 +7,7 @@ const schema = Joi.object({
         .messages({
             "string.min": "the title must be at least 4 characteres",
             "string.empty": "the title cannot be empty",
-            // "any.required": "the title is required"
+            "any.required": "the title is required"
         }),
     order: Joi
         .any(),
