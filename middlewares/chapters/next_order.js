@@ -1,4 +1,4 @@
-import Chapter from "../../models/Chapter";
+import Chapter from "../../models/Chapter.js";
 
 async function nextOrder(req, res, next){
     if (!req.body.order) {
