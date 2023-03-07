@@ -1,4 +1,3 @@
-import { ObjectId } from "bson";
 import mongoose, {Schema} from "mongoose";
 
 const schemaChapter = new mongoose.Schema({
