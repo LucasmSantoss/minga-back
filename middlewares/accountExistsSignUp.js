@@ -1,9 +1,13 @@
-import User from '../models/User.js'
+import User from "../models/User.js";
 
-async function accountExistsSignUp(req,res,next) {
+async function accountExistsSignUp(req,res,next){
     const user = await User.findOne({mail: req.body.mail})
-    if (user) {
-        return res.status(400).send('user already exist!')
+    if(user){
+        return res.status(400).json({
+            success: false,
+            message: 'User already created',
+            user
+        })
     }
     return next()
 }

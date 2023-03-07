@@ -8,21 +8,20 @@ passport.use(
             jwtFromRequest: passportJwt.ExtractJwt.fromAuthHeaderAsBearerToken(),
             secretOrKey: process.env.SECRET
         },
-        async (jwt_payload,done) => {
-            try {				
-                let user = await User.findOne({ _id:jwt_payload.id })
+        async (jwt_payload, done) => {
+            try {
+                let user = await User.findOne({ _id: jwt_payload.id })
                 if (user) {
-                    //user = user._id //dejen pasar la mayoria de los dsatos de user (menos la contraseña)
-                    return done(null,user)
+                    user.password = null
+                    return done(null, user)
                 } else {
-                    return done(null,false)
+                    return done(null, false)
                 }
             } catch (error) {
                 console.log(error)
-                return done(error,false)
+                return done(error, false)
             }
-        }
-    )
+        })
 )
 
 export default passport
