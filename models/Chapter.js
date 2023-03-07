@@ -6,7 +6,7 @@ const schemaChapter = new mongoose.Schema({
     cover_photo: {type: String, required: true},
     title: {type: String, required: true},
     order: {type: Number},
-    pages: {type: Array, required: true},
+    pages: [{type: String, required: true}],
 }, {
     time_stamps: { type: Date, default: Date.now, required: true}
  }

@@ -12,7 +12,7 @@ const schema = Joi.object({
     order: Joi
         .any(),
     pages: Joi
-        .array().items(Joi.string().uri())
+        .string().uri()
         .required()
         .min(1)
         .messages({
