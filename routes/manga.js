@@ -1,5 +1,5 @@
 import express from "express";
-import mangaCreate from "../schemas/mangaCreate.js";
+import mangaCreate from "../schemas/mangas.js";
 import validator from "../middlewares/validator.js"
 import controller from "../controller/mangas/create.js"
 import exist_title from "../middlewares/manga/exist_title.js"

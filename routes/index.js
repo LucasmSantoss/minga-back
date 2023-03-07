@@ -1,6 +1,6 @@
 import express from 'express'
 import userRouter from './users.js'
-import mangaRouter from './mangas.js'
+import mangaRouter from './manga.js'
 import categoryRouter from './category.js'
 
 
