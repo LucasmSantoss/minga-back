@@ -1,15 +1,15 @@
 import mongoose, {Schema} from "mongoose";
 
 const schemaChapter = new mongoose.Schema({
-    manga_id: {type: mongoose.Types.ObjectId,ref: "manga", required: true },
+    manga_id: {type: mongoose.Types.ObjectId,ref: "mangas", required: true },
     cover_photo: {type: String, required: true},
     title: {type: String, required: true},
-    order: {type: Number},
-    pages: [{type: String, required: true}],
-}, {
-    time_stamps: { type: Date, default: Date.now, required: true}
- }
-)
+    order: {type: Number, required: false},
+    pages: [{type: String, required: true}]
+},
+   { timestamps: true
+   
+})
 
 let Chapter = mongoose.model("chapters", schemaChapter)
 
