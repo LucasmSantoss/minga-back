@@ -10,7 +10,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.use('/',userRouter)
+
+export default router
 router.use('/users',userRouter)
 router.use('/manga', mangaRouter)
 
-export default router
