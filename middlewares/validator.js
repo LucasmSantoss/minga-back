@@ -1,16 +1,15 @@
 const validator = (schema) => [
-    (req, res, next) => {
-        const validation = schema.validate(req.body, {abortEarly:false})
-        //console.log(validation.error)
-        //console.log(validation.error?.details) //acá es donde están todos los errores de validacion
-        if (validation.error) { //si existe la propiedad error en la validacion: hay al menos un error en los datos del formulario
-            return res.status(400).json({
-                success: false,
-                message: validation.error.details.map(error=>error.message)
-            })
-        }
-        return next()
+  (req, res, next) => {
+    const validation = schema.validate(req.body, { abortEarly: false });
+    if (validation.error) {
+      //Si existe la propiedad error en la validación hay almenos 1 error en los datos del formulario
+      return res.status(400).json({
+        succes: false,
+        message: validation.error.details.map((error) => error.message),
+      });
     }
-]
+    return next();
+  },
+];
 
-export default validator
+export default validator;

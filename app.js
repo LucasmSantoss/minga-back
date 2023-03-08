@@ -1,6 +1,6 @@
 import express from 'express'
 import 'dotenv/config.js'
-import './config/database.js' //requiero la configuracion de la db
+import './config/database.js'
 import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
