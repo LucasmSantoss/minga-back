@@ -1,4 +1,14 @@
 import express from 'express'
+
+import User from '../models/User.js'
+
+let router = express.Router();
+
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('users here');
+});
+
 import controller from '../controllers/auth/auth.js'
 import validator from '../middlewares/validator.js'
 import schemaSignUp from '../schemas/usersSignUp.js'
