@@ -23,3 +23,4 @@ router.use('/',userRouter)
 router.use('/manga', mangaRouter)
 
 
+export default router

@@ -1,9 +1,9 @@
 import express from "express";
 import mangaCreate from "../schemas/mangas.js";
 import validator from "../middlewares/validator.js"
-import controller from "../controller/mangas/create.js"
+import controller from "../controllers/mangas/create.js"
 import exist_title from "../middlewares/manga/exist_title.js"
-import allController from '../controller/category/all.js'
+import allController from '../controllers/category/all.js'
 const {create} = controller
 const { all } = allController
 

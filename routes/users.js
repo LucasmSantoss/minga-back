@@ -21,7 +21,6 @@ import passport from '../middlewares/passport.js'
 
 const { sign_up,sign_in,sign_out,token } = controller
 
-let router = express.Router();
 
 router.post('/signup', validator(schemaSignUp), accountExistsSignUp, sign_up)
 router.post('/signin', validator(schemaSignIn), accountExistsSignIn, accountHasBeenVerified, passwordIsOk,sign_in)
