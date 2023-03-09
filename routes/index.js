@@ -12,14 +12,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-
+router.use('/',userRouter)
 router.use('/users', userRouter)
 router.use('/chapters', chapterRouter)
-
-router.use('/',userRouter)
-
-
-
 router.use('/manga', mangaRouter)
 
 
