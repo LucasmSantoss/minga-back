@@ -1,16 +1,16 @@
-import mongoose, {Schema} from "mongoose";
+import mongoose from 'mongoose'
 
-const schemaChapter = new mongoose.Schema({
-    manga_id: {type: mongoose.Types.ObjectId,ref: "mangas", required: true },
-    cover_photo: {type: String, required: true},
-    title: {type: String, required: true},
-    order: {type: Number, required: false},
-    pages: [{type: String, required: true}]
-},
-   { timestamps: true
-   
-})
+const schema = new mongoose.Schema(
+    {
+        manga_id:{ type:mongoose.Types.ObjectId, ref:'manga', required:true },
+        title: { type:String, required:true },
+        pages: { type:Array, required:true },
+        order: { type:Number }
+    },{
+        timestamps: true
+    }
+)
 
-let Chapter = mongoose.model("chapters", schemaChapter)
+const Chapter = mongoose.model('chapters', schema)
 
 export default Chapter
