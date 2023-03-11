@@ -3,7 +3,7 @@ import Chapter from '../../models/Chapter.js'
 const controller = {
     get_chapter: async (req, res, next) => {
         let chapters = {} 
-        let pagination = { //configuracion de la pagina 
+        let pagination = { 
             page: 1,
             limit: 4,
         }
