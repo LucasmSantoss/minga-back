@@ -8,7 +8,7 @@ const getController = {
             order.title = req.query.order
         }
 
-        let pagination = { page: 1, limit: 6}
+        let pagination = { page: 1, limit: 6 }
         if(req.query.page){
             pagination.page = Number(req.query.page)
         }

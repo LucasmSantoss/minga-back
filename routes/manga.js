@@ -8,7 +8,7 @@ import passport from "../middlewares/passport.js";
 import getController from "../controllers/mangas/get_mangas.js"
 
 
-const {create} = controller
+const { create } = controller
 const { all } = allController
 const { read } = getController
 
@@ -17,7 +17,7 @@ let router = express.Router();
 
 router.post("/",passport.authenticate("jwt", {session: false}), validator(mangaCreate), exist_title, create)
 
-router.get('/', all)
+// router.get('/', all)
 router.get("/", passport.authenticate('jwt', {session:false}), read)
 
 export default router;
