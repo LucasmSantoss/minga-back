@@ -17,7 +17,6 @@ let router = express.Router();
 
 router.post("/",passport.authenticate("jwt", {session: false}), validator(mangaCreate), exist_title, create)
 
-// router.get('/', all)
 router.get("/", passport.authenticate('jwt', {session:false}), read)
 
 export default router;
