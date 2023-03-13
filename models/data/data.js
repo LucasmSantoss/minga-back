@@ -6,7 +6,7 @@ import { companies } from './companies.js'
 import { categories } from './categories.js'
 import { mangas_v1 } from './mangas_v1.js'
 import { User } from '../User.js'
-import {Author}  from '../Author.js'
+import { Author } from "../Author.js"
 import { Company } from '../Company.js'
 import { Category } from '../Category.js'
 import { Manga } from '../Manga.js'
@@ -19,12 +19,12 @@ let newUsers = async(users) => await User.insertMany(users)
 let newRoles = async(rol1,rol2) => {
     for (let author of rol1) {
         let user = await User.findOne({ mail: author.user_id })
-        author.user_id = user._id
+        author.user_id = user.id
         await Author.create(author)
     }
     for (let company of rol2) {
         let user = await User.findOne({ mail: company.user_id })
-        company.user_id = user._id
+        company.user_id = user.id
         await Company.create(company)
     }
 }

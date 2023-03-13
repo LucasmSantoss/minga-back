@@ -13,7 +13,7 @@ let router = express.Router()
 
 const { create } = createChapter
 const {read_all} = read_all_controller
-const { get_one} = get_one_controller
+const {get_one} = get_one_controller
 
 router.get("/", read_all)
 
