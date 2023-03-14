@@ -3,8 +3,8 @@ import Category from '../../models/Category.js'
 
     const get_one = async (req, res) => {
         let one = await Manga
-        .findOne({_id:req.params.id})
-        .select("title cover_photo description author_id category -_id")
+        .findOne({_id: req.params.id})
+        .select("title cover_photo description author_id category _id")
         .populate("category_id","name -_id")
         if(one){
             return res
