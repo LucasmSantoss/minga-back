@@ -5,12 +5,13 @@ import controller from "../controllers/mangas/create.js"
 import exist_title from "../middlewares/manga/exist_title.js"
 import getOne from '../controllers/mangas/get_one.js'
 const {create} = controller
+const {get_one} = getOne;
 
 
 let router = express.Router();
 
 
 router.post("/", validator(mangaCreate), exist_title, create)
-router.get("/:id",getOne);
+router.get("/:id",get_one);
 
 export default router;
