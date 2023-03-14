@@ -1,27 +1,33 @@
 
-import Chapter from '../../models/Chapter.js';
+import Chapter from "../../models/Chapter.js";
 
 const controller = {
-  get_one: async (req, res) => {
-    try {
-      const one = await Chapter.findOne({_id:req.params.id}).select("title order pages _id");
-      console.log(one)
-      if(one) {
-        return res.status(200).json({chapter: one}); // Cambiado "Chapter" por "chapter"
-      } else {
-        return res.status(400).json({
-          success: false,
-          message: 'This chapter does not exist'
-        });
-      }
-    } catch(err) {
-      console.error(err);
-      return res.status(500).json({
-        success: false,
-        message: 'Internal server error'
-      });
-    }
-  }
-};
+  get_one: async (req, res) =>{
+        try {
+            let chapter = await Chapter.findById(req.params.id)
+                .select('-__v -updatedAt -createdAt -_id')
 
-export default controller;
+            let next = await Chapter.findOne({manga_id: chapter.manga_id, order: chapter.order + 1 })
+            let prev = await Chapter.findOne({manga_id: chapter.manga_id, order: chapter.order - 1 })
+            
+            if (chapter) {
+
+                return res.status(200).json({
+                    success: true,
+                    chapter,
+                    prev: prev?._id,
+                    next: next?._id
+                })
+            }
+
+            return res.status(404).json({
+                success: false,
+            })
+
+        } catch (error) {
+            next(error)
+        }
+    }
+}
+
+export default controller
