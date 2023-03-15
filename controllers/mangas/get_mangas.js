@@ -20,8 +20,8 @@ const getController = {
             query.title = new RegExp(req.query.title.trim(), "i")
             skip = 0
         }
-        if(req.query.categories){
-            query.category_id = req.query.categories.split(",")
+        if(req.query.category){
+            query.category_id = req.query.category.split(",")
         }
 
         let mangas = await Manga.find(query)
