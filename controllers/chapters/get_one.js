@@ -2,7 +2,7 @@
 import Chapter from "../../models/Chapter.js";
 
 const controller = {
-  get_one: async (req, res) =>{
+  get_one: async (req, res, next) =>{
         try {
             let chapter = await Chapter.findById(req.params.id)
                 .select('-__v -updatedAt -createdAt -_id')
