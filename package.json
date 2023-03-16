@@ -6,7 +6,10 @@
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
     "data": "node ./models/data/data.js",
-    "mangas_v1": "node ./models/data/mangas_v1.js"
+    "mangas_v1": "node ./models/data/mangas_v1.js",
+    "test": "mocha"
+    
+
   },
   "type": "module",
   "dependencies": {
@@ -27,6 +30,9 @@
     "passport-jwt": "^4.0.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.21"
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.21",
+    "supertest": "^6.3.3"
   }
 }
