@@ -8,14 +8,17 @@ import orderExist from "../middlewares/chapters/exist_order.js";
 import addFrontPhoto from "../middlewares/chapters/add_front_photo.js";
 import read_all_controller from "../controllers/chapters/read_all.js";
 import get_one_controller from "../controllers/chapters/get_one.js";
+import getChapters from "../controllers/chapters/get_chapters.js"
 
 let router = express.Router()
 
+const { get_chapter} = getChapters
 const { create } = createChapter
 const {read_all} = read_all_controller
 const {get_one} = get_one_controller
 
-router.get("/", read_all)
+
+router.get('/',  get_chapter)
 
 router.post("/", passport.authenticate("jwt",{session:false} ), validator(schema), orderExist, nextOrder, addFrontPhoto,create)
 router.get("/:id", get_one );
