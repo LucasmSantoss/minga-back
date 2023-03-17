@@ -1,7 +1,7 @@
 import Manga from '../../models/Manga.js'
 
     const get_one = async (req, res) => {
-        let one = await Manga.findOne({_id:req.params.id}).select("title description -_id")
+        let one = await Manga.findOne({_id:req.params.id}).select("title description git_id")
         if(one){
             return res
             .status(200)
