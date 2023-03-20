@@ -1,5 +1,5 @@
-import { Manga } from "../../models/Manga.js";
-import { Chapter } from "../../models/Chapter.js";
+import Manga from "../../models/Manga.js";
+import Chapter from "../../models/Chapter.js";
 
 
 async function chapter_is_property_of(req, res, next) {

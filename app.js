@@ -7,7 +7,8 @@ import logger from 'morgan'
 import indexRouter from './routes/index.js'
 import { __dirname } from './utils.js'
 import cors from 'cors'
-import {errorHandler, errorNotFound} from './middlewares/error.js'
+import errorNotFound from './middlewares/error.js'
+import errorHandler from './middlewares/error.js'
 
 const app = express();
 
