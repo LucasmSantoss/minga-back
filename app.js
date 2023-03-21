@@ -7,6 +7,7 @@ import logger from 'morgan'
 import indexRouter from './routes/index.js'
 import { __dirname } from './utils.js'
 import cors from 'cors'
+import errorHandler from './middlewares/errorHandler.js'
 
 const app = express();
 
@@ -21,5 +22,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 app.use('/api', indexRouter);
+
+
+
+app.use(errorHandler)
 
 export default app

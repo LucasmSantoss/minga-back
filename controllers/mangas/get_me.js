@@ -1,7 +1,8 @@
 import  Manga  from "../../models/Manga.js";
+import Author from "../../models/Author.js";
 
 const controller = {
-    read_me: async (req,res,next) => {
+    get_me: async (req,res,next) => {
         try {
             let order = { title: 1 }
             if (req.query.order == 1 || req.query.order == -1) {
@@ -26,7 +27,12 @@ const controller = {
                 pagination.limit = 10
             }
 
-            query.author_id = req.body.author_id
+            let author = await Author.findOne({user_id: req.user._id})
+            if(author){
+                query.author_id = author._id
+            }
+                
+                
 
             let mangas = await Manga.find(query)
                 .select("title category_id author_id cover_photo _id")
@@ -38,6 +44,7 @@ const controller = {
                 
             if(mangas){
                 return res.status(200).json({
+                    data: query.author_id,
                     success: true,
                     mangas
                 })
@@ -54,3 +61,4 @@ const controller = {
 }
 
 export default controller
+
