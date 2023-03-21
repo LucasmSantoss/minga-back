@@ -11,6 +11,7 @@ passport.use(
         async (jwt_payload, done) => {
             try {
                 let user = await User.findOne({ _id: jwt_payload.id })
+                
                 if (user) {
                     user.password = null
                     return done(null, user)

@@ -8,8 +8,6 @@
     "data": "node ./models/data/data.js",
     "mangas_v1": "node ./models/data/mangas_v1.js",
     "test": "mocha"
-    
-
   },
   "type": "module",
   "dependencies": {
