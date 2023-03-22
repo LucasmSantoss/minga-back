@@ -22,6 +22,10 @@ const schema = Joi.object({
   photo: Joi.string().uri().messages({
     invalid: "The photo url is not correct",
   }),
-})
+  user_id: Joi.objectId().messages({
+            'invalid': 'user_id is not an objectId'
+        }),
+});
+
 
 export default schema
