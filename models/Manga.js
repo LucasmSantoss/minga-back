@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 let schema = new mongoose.Schema(
   {
@@ -14,6 +14,5 @@ let schema = new mongoose.Schema(
   }
 );
 
-let Manga = mongoose.model("manga", schema);
-
-export default Manga;
+const Manga = mongoose.model('mangas', schema)
+export default Manga
