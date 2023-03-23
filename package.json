@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "test01": "mocha ./test/test01.test.js"
   },
   "type": "module",
   "dependencies": {
@@ -25,6 +26,9 @@
     "passport-jwt": "^4.0.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.21"
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.21",
+    "supertest": "^6.3.3"
   }
 }
