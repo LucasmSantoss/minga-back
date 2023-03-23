@@ -7,6 +7,9 @@
     "dev": "nodemon ./bin/www",
     "data": "node ./models/data/data.js",
     "test_chapters": "mocha ./test/t-03.test.js"
+    "mangas_v1": "node ./models/data/mangas_v1.js",
+    "test": "mocha"
+    "test01": "mocha ./test/test01.test.js"
   },
   "type": "module",
   "dependencies": {
@@ -21,6 +24,7 @@
     "joi": "^17.8.3",
     "joi-oid": "^1.1.2",
     "jsonwebtoken": "^9.0.0",
+    "mocha": "^10.2.0",
     "mongoose": "^6.10.2",
     "morgan": "~1.9.1",
     "passport": "^0.6.0",
