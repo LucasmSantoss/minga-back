@@ -19,7 +19,7 @@ import destroy_controller from "../controllers/chapters/destroy.js"
 
 let router = express.Router()
 
-const { get_chapter} = getChapters
+
 const { create } = createChapter
 const { get_chapter } = getChapter
 const {read_all} = read_all_controller
