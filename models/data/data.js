@@ -12,6 +12,7 @@ import  Category  from '../Category.js'
 import  Manga  from '../Manga.js'
 import  Chapter  from '../Chapter.js'
 
+
 let newCategories = async(categories) => await Category.insertMany(categories)
 
 let newUsers = async(users) => await User.insertMany(users)
@@ -40,7 +41,8 @@ let newMangas = async(mangas) => {
         let newManga = await Manga.create(manga)
         for (let chapter of manga.chapters) {
             chapter.manga_id = newManga._id
-            await Chapter.create(chapter)
+            chapter.cover_photo = chapter.pages[0]
+         await  Chapter.create(chapter)
         }
     }
 }

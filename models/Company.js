@@ -13,5 +13,5 @@ const schema = new mongoose.Schema(
 )
 
 const Company = mongoose.model('companies', schema)
-
 export default Company
+

@@ -9,12 +9,11 @@ const schema = new mongoose.Schema(
         date: { type: Date },
         photo: { type: String, require: true },
         user_id: { type: mongoose.Types.ObjectId, ref: 'users', require: true },
-        active: { type: Boolean, require: true }
+        active: { type: Boolean, require: false }
     },{
         timestamps: true
     }
 )
 
 const Author = mongoose.model('authors', schema)
-
 export default Author

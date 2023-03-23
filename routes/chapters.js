@@ -17,9 +17,9 @@ import update_controller from "../controllers/chapters/update.js"
 import destroy_controller from "../controllers/chapters/destroy.js"
 
 
-
 let router = express.Router()
 
+const { get_chapter} = getChapters
 const { create } = createChapter
 const { get_chapter } = getChapter
 const {read_all} = read_all_controller
@@ -29,12 +29,13 @@ const { destroy } = destroy_controller
 
 router.get("/:id", get_one );
 router.get("/all/:id", read_all)
-router.get('/', passport.authenticate('jwt', { session: false }), get_chapter);
+router.get('/',  get_chapter)
 
 router.put('/:id', passport.authenticate('jwt', { session: false }), validator(editChapter), finds_id, is_active, chapter_is_property_of, update)
 router.delete('/:id', passport.authenticate('jwt', { session: false }), finds_id, is_active, chapter_is_property_of, destroy)
 
 router.post("/", passport.authenticate("jwt",{session:false} ), validator(schema), orderExist, nextOrder, addFrontPhoto,create)
+router.get("/:id", get_one );
 
 
 export default router

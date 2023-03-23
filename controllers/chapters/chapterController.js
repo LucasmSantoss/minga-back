@@ -1,5 +1,4 @@
 import Chapter from '../../models/Chapter.js';
-
 const router = express.Router();
 
 
@@ -15,5 +14,6 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({ message: 'Error del servidor' });
   }
   });
+
 
 module.exports = router;
