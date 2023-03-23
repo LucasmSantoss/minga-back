@@ -6,6 +6,7 @@
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
     "data": "node ./models/data/data.js",
+    "test_chapters": "mocha ./test/t-03.test.js"
     "mangas_v1": "node ./models/data/mangas_v1.js",
     "test": "mocha"
     "test01": "mocha ./test/test01.test.js"
