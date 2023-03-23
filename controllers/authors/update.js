@@ -1,4 +1,5 @@
 import Author from "../../models/Author.js";
+import createError from 'http-errors'
 
 
 const controller = {
@@ -14,10 +15,7 @@ const controller = {
             }
             return next ( createError(404, "no es author" ))
         }catch(error){
-            return res.status(400).json({
-                success: false,
-                message: "Server error"
-            })
+            return next(error)
         }
     }
 }
