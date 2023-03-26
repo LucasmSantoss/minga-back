@@ -7,6 +7,7 @@ import passport from "../middlewares/passport.js"
 import controller from '../controllers/authors/create.js';
 import readController from '../controllers/authors/get_one.js'
 import schemaAuthors from '../schemas/authors.js'
+import alreadyExists from '../middlewares/authors/alreadyExists.js';
 
 const {get_me} = getMe
 const {update} = updateController
@@ -18,7 +19,7 @@ let router = express.Router()
 router.get("/me", passport.authenticate("jwt", {session: false}), get_me)
 router.get('/:id', passport.authenticate("jwt", { session:false }), read_one)
 
-router.post('/', passport.authenticate("jwt", { session:false }), validator(schemaAuthors), create)
+router.post('/', passport.authenticate("jwt", { session:false }), validator(schemaAuthors), alreadyExists, create)
 
 router.put("/me",passport.authenticate("jwt", {session: false}), validator(schemaUpdate), update );
 
