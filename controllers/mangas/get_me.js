@@ -40,7 +40,7 @@ const controller = {
                 .skip(skip)
                 .limit(pagination.limit > 0 ? pagination.limit : 0)
                 .populate("category_id", "name -_id")
-                .populate("author_id", "name last_name _id")
+                .populate("author_id", "name last_name -_id")
                 
             if(mangas){
                 return res.status(200).json({
