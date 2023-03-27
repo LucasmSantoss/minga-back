@@ -5,8 +5,6 @@ import mangaRouter from './manga.js'
 import categoryRouter from "./category.js"
 import authorRouter from "./authors.js"
 
-
-
 let router = express.Router();
 
 /* GET home page. */
@@ -19,9 +17,7 @@ router.use('/users', userRouter)
 router.use('/chapters', chapterRouter)
 router.use('/',userRouter)
 router.use('/authors', authorRouter)
-router.use("/category", categoryRouter)
 router.use('/manga', mangaRouter)
 router.use("/category", categoryRouter)
-router.use("/authors", authorRouter)
 
 export default router

@@ -1,4 +1,3 @@
-
 import Joi from "joi-oid";
 
 const schema = Joi.object({
@@ -23,7 +22,9 @@ const schema = Joi.object({
   photo: Joi.string().uri().required().messages({
     invalid: "The photo url is not correct",
   }),
+  active: Joi.boolean().required().messages({
+    invalid: "Not a Boolean",
+  }),
 });
 
 export default schema;
-
