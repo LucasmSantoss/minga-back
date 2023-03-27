@@ -25,9 +25,9 @@ const schema = Joi.object({
   user_id: Joi.objectId().messages({
             'invalid': 'user_id is not an objectId'
         }),
-  active: Joi.boolean({
-              invalid: 'Not active'
-  })
+  // active: Joi.boolean({
+  //             invalid: 'Not active'
+  // })
   
 });
 
