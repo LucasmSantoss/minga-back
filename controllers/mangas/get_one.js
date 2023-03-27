@@ -1,5 +1,4 @@
 import manga from "../../models/Manga.js";
-import category from '../../models/Category.js'
 
 const controller = {
     get_one: async (req, res) => {

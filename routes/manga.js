@@ -26,7 +26,7 @@ let router = express.Router();
 router.post("/",passport.authenticate("jwt", {session: false}), validator(mangaCreate), exist_title, create)
 router.get("/", passport.authenticate('jwt', {session:false}), read)
 router.get("/me", passport.authenticate("jwt", { session: false }), get_me)
-router.get("/:id",get_one);
+router.get("/:id", get_one);
 router.delete('/:id', passport.authenticate('jwt', { session: false }),  destroy)
 router.put('/:id', passport.authenticate('jwt', { session: false }), validator(updateMangaSchema), update)
 
