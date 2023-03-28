@@ -1,6 +1,6 @@
 import mercadopago from "mercadopago";
 
-mercadopago.configure({ access_token: "TEST-8023661462568302-032418-6a54a944b8df78532471c5038f21fe76-636446598"})
+mercadopago.configure({ access_token: process.env.ACCESS_TOKEN})
 
 const controller = {
     create: (req, res) => {
