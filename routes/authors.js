@@ -8,7 +8,7 @@ import controller from '../controllers/authors/create.js';
 import readController from '../controllers/authors/get_one.js'
 import schemaAuthors from '../schemas/authors.js'
 import updateActive from '../controllers/authors/update_active.js'
-import readAll from '../controllers/authors/read_all_acive.js'
+import readAll from '../controllers/authors/read_all_active.js'
 
 const {get_me} = getMe
 const {update} = updateController
