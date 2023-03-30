@@ -14,14 +14,11 @@ import updateController from '../controllers/authors/update.js'
 import schemaUpdate from '../schemas/authorsUpdate.js';
 import alreadyExists from '../middlewares/authors/alreadyExists.js';
 
-
-const { me } = meController;
-const {create} = controller
-const {read_one} = readController
-
-const {update_active}= updateActive;
-const {read_all_active} = readAll
-
+const { get_me } = meController
+const { create } = controller
+const { read_one } = readController
+const { update_active }= updateActive;
+const { read_all_active } = readAll
 const { read_all } = read_allController
 const { update } = updateController
 
@@ -33,7 +30,7 @@ router.get("/me", passport.authenticate("jwt", {session: false}), get_me)
 router.put("/me",passport.authenticate("jwt", {session: false}), validator(schemaUpdate), update );
 router.get('/:id', passport.authenticate("jwt", { session:false }), read_one)
 router.post('/', passport.authenticate("jwt", { session:false }), validator(schemaAuthors), alreadyExists, create)
-router.get("/authors_me/me", passport.authenticate("jwt", { session:false }), finds_id, me );
+router.get("/authors_me/me", passport.authenticate("jwt", { session:false }), finds_id, get_me );
 router.put("/authors_me/me", passport.authenticate("jwt", { session:false }),validator(schemaUpdate), finds_id,is_active, update )
 router.get('/', read_all )
 router.put("/admin/:id",passport.authenticate("jwt", { session:false })  ,update_active)
