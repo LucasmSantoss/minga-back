@@ -1,8 +1,9 @@
-import Author from "../../models/Author.js";
-import createError from 'http-errors'
+import  Author  from "../../models/Author.js";
+import createError from 'http-errors';
 
 
 const controller = {
+
     update: async(req,res,next) => {
         try{
             let author = await Author.findOneAndUpdate({ user_id: req.user }, req.body, { new: true })
@@ -18,6 +19,6 @@ const controller = {
             return next(error)
         }
     }
-}
+};
 
-export default controller
+export default controller;
