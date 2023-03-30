@@ -1,13 +1,14 @@
-import Joi from "joi";
+import Joi from 'joi-oid';
 
 const schema = Joi.object({
     title: Joi
         .string()
         .required()
+        .min(4)
         .messages({
-            "string.min": "the title must be at least 4 characteres",
-            "string.empty": "the title cannot be empty",
-            "any.required": "the title is required"
+            'string.min': 'the title must be at least 4 characteres',
+            'string.empty': 'the title cannot be empty',
+            'string.required': 'the title is required',
         }),
     order: Joi
         .any(),
@@ -16,12 +17,16 @@ const schema = Joi.object({
         .required()
         .min(1)
         .messages({
-            "string.empty": "pages must be at least 1 characteres",
-            "any.required": "the pages have to be url"
+            'any.required': 'the pages have to be url',
+            'string.empty': 'the pages cannot be empty'
         }),
     manga_id: Joi
-        .string()
+        .objectId()
         .required(),
+    cover_photo: Joi
+        .string()
+        .required()
+
 })
 
 export default schema
