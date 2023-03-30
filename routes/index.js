@@ -4,7 +4,11 @@ import chapterRouter from './chapters.js'
 import mangaRouter from './manga.js'
 import categoryRouter from "./category.js"
 import authorRouter from "./authors.js"
+import companyRouter from './companies.js'
 import donationsRouter from "./donations.js"
+import reactionsRouter from './reactions.js'
+import commentsRouter from './comments.js'
+
 
 let router = express.Router();
 
@@ -19,8 +23,10 @@ router.use('/chapters', chapterRouter)
 router.use('/authors', authorRouter)
 router.use('/manga', mangaRouter)
 router.use("/category", categoryRouter)
-router.use("/authors", authorRouter)
+router.use("/companies", companyRouter)
 router.use("/donate", donationsRouter)
+router.use('/comments',commentsRouter)
+router.use('/reactions', reactionsRouter)
 
 
 export default router
