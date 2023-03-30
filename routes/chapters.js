@@ -35,7 +35,6 @@ router.put('/:id', passport.authenticate('jwt', { session: false }), validator(e
 router.delete('/:id', passport.authenticate('jwt', { session: false }), finds_id, is_active, chapter_is_property_of, destroy)
 
 router.post("/", passport.authenticate("jwt",{session:false} ), validator(schema), orderExist, nextOrder, addFrontPhoto,create)
-router.get("/:id", get_one );
 
 
 export default router
