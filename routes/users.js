@@ -1,14 +1,4 @@
 import express from 'express'
-
-import User from '../models/User.js'
-
-let router = express.Router();
-
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('users here');
-});
-
 import controller from '../controllers/auth/auth.js'
 import validator from '../middlewares/validator.js'
 import schemaSignUp from '../schemas/usersSignUp.js'
@@ -21,6 +11,7 @@ import passport from '../middlewares/passport.js'
 
 const { sign_up,sign_in,sign_out,token } = controller
 
+let router = express.Router();
 
 router.post('/signup', validator(schemaSignUp), accountExistsSignUp, sign_up)
 router.post('/signin', validator(schemaSignIn), accountExistsSignIn, accountHasBeenVerified, passwordIsOk,sign_in)
